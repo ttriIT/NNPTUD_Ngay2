@@ -27,19 +27,19 @@ let productNamePrice = products.map(function (product) {
     price: product.price,
   };
 });
-console.log(productNamePrice);
+
 
 // Câu 4: Lọc ra các sản phẩm còn hàng trong kho (quantity > 0)
 let productsInStock = products.filter(function (product) {
   return product.quantity > 0;
 });
-console.log(productsInStock);
+
 
 // Câu 5: Kiểm tra xem có ít nhất một sản phẩm có giá trên 30,000,000 hay không
 let hasPriceover30M = products.some(function (product) {
   return product.price > 30000000;
 });
-console.log(hasPriceover30M);
+
 
 // Câu 6: Kiểm tra xem tất cả sản phẩm thuộc danh mục "Accessories" có đang được bán (isAvailable = true) hay không
 let allAccessoriesAvailable = products
@@ -49,13 +49,12 @@ let allAccessoriesAvailable = products
   .every(function (product) {
     return product.isAvailable === true;
   });
-console.log(allAccessoriesAvailable);
+
 
 // Câu 7: Tính tổng giá trị kho hàng (price × quantity)
 let totalInventoryValue = products.reduce(function (sum, product) {
   return sum + product.price * product.quantity;
 }, 0);
-console.log(totalInventoryValue);
 
 // Câu 8: Dùng for...of duyệt mảng products và in ra: Tên - Danh mục - Trạng thái
 for (let product of products) {
@@ -76,4 +75,12 @@ let availableProductsInStock = products
   .map(function (product) {
     return product.name;
   });
+
+
+
+console.log(productNamePrice);
+console.log(productsInStock);
+console.log(hasPriceover30M);
+console.log(allAccessoriesAvailable);
+console.log(totalInventoryValue);
 console.log(availableProductsInStock);
